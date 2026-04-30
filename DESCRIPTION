@@ -4,13 +4,17 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Alvis", "Lee", , "alee134@u.rochester.edu", role = c("aut", "cre"))
 Description: This package provides tools for identifying, matching and standardizing 
-  string data in R. The package includes functions for summarizing frequencies of 
-  unique string values (str_match), locating target words or patterns within data (str_find), 
-  and matching inconsistent strings against a user-supplied dictionary for 
-  standardization (str_clean.These functions are designed to support exploratory 
-  data analysis and preprocessing workflows with text-based data.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+  string data in R. The package includes three functions - (1) str_match, (2) str_find 
+  and (3) str_clean.
+  
+  (1) str_match summarizes categorical string values (i.e counts, proportions). 
+  (2) str_find locates target words or patterns within data.
+  (3) str_clean matches noisy string data to a user-supplied dictionary for standardization.
+  
+  These functions are designed to support exploratory data analysis and 
+  preprocessing workflows with text-based data.This package will also include a 
+  sample dataset and dictionary to showcase str_clean.
+License: https://github.com/AlbeeLee01/strmatch?tab=readme-ov-file
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3

@@ -1,3 +1,27 @@
+#' Summarize unique string values (i.e counts, proportions).
+#'
+#'This function identifies all unique string values in a selected vector and returns
+#'a summary matrix containing the count and proportion of each unique string. This is
+#'useful for quick exploration into categorical string variables and understanding
+#'their frequency distribution in your data. The effectiveness of this function (at the
+#'moment) is reliant on how noisy the vector or dataframe is.
+#'
+#'@param df Dataset containing column of interest.
+#'
+#'@param x A character string or numeric index indicating which column in 'df' should be
+#'evaluated.
+#'
+#'@returns A matrix with named rows for each unique string in the selected column and two columns:
+#'  \describe {
+#'    \item{Count:} {The number of instances each unique string appears.}
+#'    \item{Percentage:} {The proportion of total observations that is represented by that string.}
+#'}
+#'
+#'@export
+#'
+#'@examples
+#'str_unique(iris,"Species)
+#'str_unique(mtcars, "cyl)
 
 str_unique <- function(df,x) {
 
@@ -27,7 +51,6 @@ str_unique <- function(df,x) {
   return(str.mat)
 }
 
-str_unique(iris, 'Species')
 
 
 
