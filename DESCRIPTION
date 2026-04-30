@@ -1,0 +1,16 @@
+Package: strmatch
+Title: Tools for String Matching and Text Standardization
+Version: 0.0.0.9000
+Authors@R: 
+    person("Alvis", "Lee", , "alee134@u.rochester.edu", role = c("aut", "cre"))
+Description: This package provides tools for identifying, matching and standardizing 
+  string data in R. The package includes functions for summarizing frequencies of 
+  unique string values (str_match), locating target words or patterns within data (str_find), 
+  and matching inconsistent strings against a user-supplied dictionary for 
+  standardization (str_clean.These functions are designed to support exploratory 
+  data analysis and preprocessing workflows with text-based data.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
