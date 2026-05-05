@@ -1,2 +1,4 @@
 ^strmatch\.Rproj$
 ^\.Rproj\.user$
+^\.positai$
+^\.claude$

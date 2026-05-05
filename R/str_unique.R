@@ -1,37 +1,40 @@
-#' Summarize unique string values (i.e counts, proportions).
+#'Summarize unique string values in a dataset column
 #'
-#'This function identifies all unique string values in a selected vector and returns
-#'a summary matrix containing the count and proportion of each unique string. This is
-#'useful for quick exploration into categorical string variables and understanding
-#'their frequency distribution in your data. The effectiveness of this function (at the
-#'moment) is reliant on how noisy the vector or dataframe is.
+#'Identifies all unique string values in a selected vector and returns a sorted summary matrix containing the count and proportion of each unique string.
+#'This is useful for quick exploration into categorical string variables and understanding their frequency distribution in the data.
+#'The effectiveness of this function is reliant on how noisy the string data is.
 #'
-#'@param df Dataset containing column of interest.
+#'@param df A data frame containing the variable to be analyzed.
 #'
-#'@param x A character string or numeric index indicating which column in 'df' should be
-#'evaluated.
+#'@param x Column name (character) or column index (numeric) indicating the variable to summarize.
 #'
-#'@returns A matrix with named rows for each unique string in the selected column and two columns:
-#'  \describe {
-#'    \item{Count:} {The number of instances each unique string appears.}
-#'    \item{Percentage:} {The proportion of total observations that is represented by that string.}
+#'@return A sorted matrix where each row corresponds to a unique value in the selected column. The matrix contains two columns:
+#'\itemize{
+#'  \item Count: Number of occurences of each unique value.
+#'  \item Percentage: Proportion of each value in the dataset.
 #'}
+#'The matrix is sorted in descending order by Count.
 #'
 #'@export
 #'
 #'@examples
-#'str_unique(iris,"Species)
-#'str_unique(mtcars, "cyl)
+#'
+#'#Basic example with a string variable
+#'str_unique(iris,"Species")
+#'
+#'#Example with character-coerced numeric columns
+#'str_unique(mtcars, "cyl")
 
 str_unique <- function(df,x) {
 
   #Setup information for function
-  str_vec <- df[,x]
+  str_vec <- as.character(df[,x])
   n.row <- length(str_vec)
+
   unique_vec <- unique(str_vec)
   n.unique <- length(unique_vec)
 
-  #Empty iteratable matrix:
+  #Empty iteritable matrix:
   str.mat <- matrix(NA, nrow = n.unique, ncol = 2)
 
   #Nested loop to find count and percentage of each unique string.
@@ -45,17 +48,15 @@ str_unique <- function(df,x) {
     str.mat[i,1] <- count
     str.mat[i,2] <- count/n.row
   }
+
   rownames(str.mat) <- unique_vec
   colnames(str.mat) <- c("Count", "Percentage")
 
+  #Ordered based on count
+  str.mat <- str.mat[order(str.mat[, "Count"], decreasing = TRUE), ]
+
   return(str.mat)
 }
-
-
-
-
-
-
 
 
 
