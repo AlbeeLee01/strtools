@@ -18,9 +18,11 @@
 #'
 #' @format A data frame with 5 elements. Each element is a character vector of lowercase synonyms corresponding to a firm name known as the "key"
 #' \describe{
-#'   \item{KKR}{"kohlberg kravis roberts", "kkr"}
-#'   \item{Chase}{"chase", "jp morgan", "jp morgan chase"}
-#'   \item{Blackstone}{"bx", "blackstone", "blackstone inc."}
+#'   \item{KKR}{kohlberg kravis roberts, kkr}
+#'   \item{Chase}{chase, jp morgan, jp morgan chase}
+#'   \item{BofA}{bofa, bofa securities, inc., bank of america}
+#'   \item{Blackstone}{bx, blackstone, blackstone inc.}
+#'   \item{UBS}{ubs, ubs group ag}
 #' }
 "invest.dict"
 
@@ -42,9 +44,11 @@
 #'Like invest.dict, this corresponds with animals.df and used for the 'dict' argument in 'str_clean()', resulting in the recoding of animal species into their broader category (i.e "tiger" -> "feline")
 #' @format A named list with 5 elements, each element corresponding to a character vector of species names belonging to a category.
 #' \describe{
-#'   \item{feline}{"house cat", "tiger", "panther", "lion", "jaguar"}
-#'   \item{canine}{"wolf", "fox", "coyote", "house dog", "jackal"}
-#'   \item{birds}{"sparrow", "pigeon", "chicken", "falcon", "eagle"}
+#'   \item{feline}{house cat, tiger, panther, lion, jaguar}
+#'   \item{canine}{wolf, fox, coyote, house dog, jackal}
+#'   \item{birds}{sparrow, pigeon, chicken, falcon, eagle}
+#'   \item{turtles}{snapping turtle, box turtle, tortoise}
+#'   \item{insects}{beetle, ants, wasp, bees, mantis}
 #' }
 #'
 #'

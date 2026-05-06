@@ -7,9 +7,11 @@
 \format{
 A data frame with 5 elements. Each element is a character vector of lowercase synonyms corresponding to a firm name known as the "key"
 \describe{
-\item{KKR}{"kohlberg kravis roberts", "kkr"}
-\item{Chase}{"chase", "jp morgan", "jp morgan chase"}
-\item{Blackstone}{"bx", "blackstone", "blackstone inc."}
+\item{KKR}{kohlberg kravis roberts, kkr}
+\item{Chase}{chase, jp morgan, jp morgan chase}
+\item{BofA}{bofa, bofa securities, inc., bank of america}
+\item{Blackstone}{bx, blackstone, blackstone inc.}
+\item{UBS}{ubs, ubs group ag}
 }
 }
 \usage{

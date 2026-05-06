@@ -7,9 +7,11 @@
 \format{
 A named list with 5 elements, each element corresponding to a character vector of species names belonging to a category.
 \describe{
-\item{feline}{"house cat", "tiger", "panther", "lion", "jaguar"}
-\item{canine}{"wolf", "fox", "coyote", "house dog", "jackal"}
-\item{birds}{"sparrow", "pigeon", "chicken", "falcon", "eagle"}
+\item{feline}{house cat, tiger, panther, lion, jaguar}
+\item{canine}{wolf, fox, coyote, house dog, jackal}
+\item{birds}{sparrow, pigeon, chicken, falcon, eagle}
+\item{turtles}{snapping turtle, box turtle, tortoise}
+\item{insects}{beetle, ants, wasp, bees, mantis}
 }
 }
 \usage{

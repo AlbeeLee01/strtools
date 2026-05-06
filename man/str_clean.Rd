@@ -11,22 +11,22 @@ str_clean(df, x, dict, str.sep = NULL)
 
 \item{x}{a column name (character) or column index (numeric) indicating the variable to evaluate.}
 
-\item{dict}{a named list where each element is a character vector of synonyms assigned to a key (i.e list(Chase = c("chase", "jp morgan")))}
+\item{dict}{a named list where each element is a character vector of synonyms assigned to a key (i.e Chase = c("chase", "jp morgan"))}
 
-\item{str.sep}{a character string used to split multi-word entries within a cell (i.e str.sep = ";" or "."). Default is NULL, meaning each cell is treated as a single value.}
+\item{str.sep}{a character string used to split multi-"word" values within a cell (i.e str.sep = ";" or "."). Default is NULL meaning each cell is treated as a single value.}
 }
 \value{
 Returns 'df' with a new column inserted directly after the source column 'x'. A complimentary data frame 'no_match.df' stores any unmatched values and their corresponding rows in the global environment containing:
 \itemize{
 \item string: the unmatched string value.
-\item rows: a vector of row indices of the unmatched values.
+\item rows: a vector of row indices for that unmatched value.
 }
 
-If unmatched values exist, a warning message is produced detailing the number of unmatched strings and recommending the user to check their dictionary synonyms. Otherwise, a message declaring that the data was cleaned is printed.
+If unmatched values exist, a warning message is produced detailing the number of unmatched values and recommending the user to check their dictionary synonyms. Otherwise, a message declaring that the data was cleaned is printed.
 }
 \description{
-'str_clean()' maps raw string values in a selected column to harmonized keywords defined in a user-supplied dictionary.
-Each value is matched against a list of synonyms assigned to each key and replaced with that key if a match is found.
+'str_clean()' maps raw string values in a selected column to harmonized keys defined in a user-supplied dictionary.
+Each value is matched against a list of synonyms assigned to each key and replaced with that key string if a match is found.
 Values that are unmatched are left as-is and reported in a data frame containing information on unmatched values.
 }
 \details{
