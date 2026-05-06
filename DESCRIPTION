@@ -1,17 +1,20 @@
-Package: strmatch
-Title: Tools for String Matching and Text Standardization
-Version: 0.0.1.0000
+Package: strtools
+Title: String Cleaning and Tools for Exploratory Data Analysis
+Version: 1.0.0000
 Authors@R: 
     person("Alvis", "Lee", , "alee134@u.rochester.edu", role = c("aut", "cre"))
-Description: This package provides tools for identifying, matching and standardizing 
-  string data in R. The package includes three functions - (1) str_unique, (2) str_find 
-  and (3) str_clean.(1) str_unique summarizes categorical string values (i.e counts, proportions). 
-  (2) str_find locates and returns user-inputted key words (3) str_clean matches noisy string data to a 
-  user-supplied dictionary for standardization.These functions are designed to support exploratory data analysis and preprocessing 
-  workflows with text-based data.This package will also include a sample dataset 
-  and dictionary to showcase str_clean.
+Description: This package includes three functions for working with messy text-based data. 
+    str_clean() harmonizes noisy string data by matching values to a user-supplied dictionary. 
+    str_find() locates and returns rows containing user-supplied keywords. 
+    str_unique() summarizes categorical string values by returning counts and proportions of unique entries. 
+    These functions are designed to support exploratory data analysis and preprocessing workflows. 
+    It is recommended to use str_clean() first before the other functions for the best results.
+    Included in this package are three custom dataframes and 2 dictionaries to illustrate varied use cases across different data structures.
+    Refer to R/data.R and data-raw/datasets.R for more information on the datasets.
 License: https://github.com/AlbeeLee01/strmatch?tab=readme-ov-file
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 LazyData: yes
 Config/roxygen2/version: 8.0.0
+Depends: 
+    R (>= 3.5)
