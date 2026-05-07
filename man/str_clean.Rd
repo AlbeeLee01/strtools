@@ -11,12 +11,12 @@ str_clean(df, x, dict, str.sep = NULL)
 
 \item{x}{a column name (character) or column index (numeric) indicating the variable to evaluate.}
 
-\item{dict}{a named list where each element is a character vector of synonyms assigned to a key (i.e Chase = c("chase", "jp morgan"))}
+\item{dict}{a named list where each element is a character vector of synonyms assigned to a key (i.e \code{Chase = c("chase", "jp morgan")})}
 
-\item{str.sep}{a character string used to split multi-"word" values within a cell (i.e str.sep = ";" or "."). Default is NULL meaning each cell is treated as a single value.}
+\item{str.sep}{a character string used to split multi-"word" values within a cell (i.e \code{str.sep = ";"} or \code{"."}). Default is NULL meaning each cell is treated as a single value.}
 }
 \value{
-Returns 'df' with a new column inserted directly after the source column 'x'. A complimentary data frame 'no_match.df' stores any unmatched values and their corresponding rows in the global environment containing:
+Returns \code{df} with a new column inserted directly after the source column \code{x}. A complimentary data frame \code{no_match.df} stores any unmatched values and their corresponding rows in the global environment containing:
 \itemize{
 \item string: the unmatched string value.
 \item rows: a vector of row indices for that unmatched value.
@@ -25,14 +25,14 @@ Returns 'df' with a new column inserted directly after the source column 'x'. A 
 If unmatched values exist, a warning message is produced detailing the number of unmatched values and recommending the user to check their dictionary synonyms. Otherwise, a message declaring that the data was cleaned is printed.
 }
 \description{
-'str_clean()' maps raw string values in a selected column to harmonized keys defined in a user-supplied dictionary.
+\code{str_clean()} maps raw string values in a selected column to harmonized keys defined in a user-supplied dictionary.
 Each value is matched against a list of synonyms assigned to each key and replaced with that key string if a match is found.
 Values that are unmatched are left as-is and reported in a data frame containing information on unmatched values.
 }
 \details{
 The function sets all string values to lowercase before matching. As such dictionary synonyms should also be set in lowercase. Matching is conducted after leading and trailing white spaces are trimmed.
 
-Any unmatched strings are stored in a data frame called 'no_match.df' which is assigned to the global environment for additional analysis or cleaning. Each row contains the unmatched string and a vector of row indices where it occurred.
+Any unmatched strings are stored in a data frame called \code{no_match.df} which is assigned to the global environment for additional analysis or cleaning. Each row contains the unmatched string and a vector of row indices where it occurred.
 
 A cleaned column is inserted directly after the source column in the output. The cleaned column is a list-column where each cell contains a character vector of both matched and unmatched keys.
 }

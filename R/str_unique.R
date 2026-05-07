@@ -1,17 +1,17 @@
 #'Summarize unique string values
 #'
-#''str_unique()' identifies all unique string values in a selected vector and returns a sorted summary of the count and proportion of each unique string.
+#'\code{str_unique()} identifies all unique string values in a selected vector and returns a sorted summary of the count and proportion of each unique string.
 #'A bar plot can also be produced showing the top n frequent values based on count or percentage.
 #'
 #'@param x a vector containing character or character-coercible values.
 #'
-#'@param case.sensitive a logical value. If TRUE, unique values consider for letter casing (i.e "TREE" and "tree" will be treated as different values). If FALSE, all string values are set to lowercase (i.e, "PANTHER" is set to "panther"). Default is TRUE.
+#'@param case.sensitive a logical value. If \code{TRUE}, unique values consider for letter casing (i.e "TREE" and "tree" will be treated as different values). If \code{FALSE}, all string values are set to lowercase (i.e, "PANTHER" is set to "panther"). Default is TRUE.
 #'
 #'@param top_n a numeric value indicating how many of the most frequent values the bar plot shows. Default is 10.
 #'
-#'@param plot a logical value. If TRUE, a bar plot showing the top 10 frequent string values will be shown. If FALSE, no bar plot will be created.
+#'@param plot a logical value. If \code{TRUE}, a bar plot showing the top 10 frequent string values will be shown. If \code{FALSE}, no bar plot will be created.
 #'
-#'@param use_percentage a logical value. If FALSE, the y-axis and y-labels will use the Count data. If TRUE, the y-axis and y-labels will use the Percentage data.
+#'@param use_percentage a logical value. If \code{FALSE}, the y-axis and y-labels will use the \code{Count} data. If \code{TRUE}, the y-axis and y-labels will use the \code{Percentage} data.
 #'
 #'@param ... further arguments passed to customize bar plot visualization.
 #'
@@ -19,12 +19,12 @@
 #'
 #'@return A descending sorted matrix where each row corresponds to a unique value from the string vector. The matrix contains two columns:
 #'\itemize{
-#'  \item Count: Number of occurrences of each unique value.
-#'  \item Percentage: Proportion of each value in the dataset.
+#'  \item \code{Count}: Number of occurrences of each unique value.
+#'  \item \code{Percentage}: Proportion of each value in the dataset.
 #'}
-#'If 'plot' is set to TRUE, a bar plot will be created using the sorted matrix data.
+#'If \code{plot} is set to TRUE, a bar plot will be created using the sorted matrix data.
 #'
-#'If 'use_percentage' is TRUE, the bar plot will use Percentage data rather than the default Count data.
+#'If \code{use_percentage} is TRUE, the bar plot will use Percentage data rather than the default Count data.
 #'
 #'
 #'@export

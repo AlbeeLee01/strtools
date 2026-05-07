@@ -11,7 +11,7 @@ Description: This package includes three functions for working with messy text-b
     It is recommended to use str_clean() first before the other functions for the best results.
     Included in this package are three custom dataframes and 2 dictionaries to illustrate varied use cases across different data structures.
     Refer to R/data.R and data-raw/datasets.R for more information on the datasets.
-License: https://github.com/AlbeeLee01/strmatch?tab=readme-ov-file
+License: https://github.com/AlbeeLee01/strtools 
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 LazyData: yes

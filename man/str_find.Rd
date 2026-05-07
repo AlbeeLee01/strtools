@@ -13,7 +13,7 @@ str_find(df, x, k.word, case.sensitive = TRUE)
 
 \item{k.word}{a string vector that contains keyword(s) to be detected from the data frame.}
 
-\item{case.sensitive}{a logical evaluating to TRUE or FALSE indicating whether the function evaluates for uppercase or lowercase strings.}
+\item{case.sensitive}{a logical evaluating to \code{TRUE} or \code{FALSE} indicating whether the function evaluates for uppercase or lowercase strings.}
 }
 \value{
 A data frame containing only the rows where the selected column matches at least one of the specified keywords.
@@ -26,9 +26,9 @@ This function searches for specified keyword(s) within a selected data frame col
 It is useful for filtering observations based on string values.
 }
 \details{
-If 'case.sensitive = TRUE', matching requires exact agreement in letter casing (i.e "PANTHER" and "Panther" will be treated as different values).
+If \code{case.sensitive = TRUE}, matching requires exact agreement in letter casing (i.e \code{"PANTHER"} and \code{"Panther"} will be treated as different values).
 
-If 'case.sensitive = FALSE', matching ignores differences in letter casing (i.e, "PANTHER" and "panther" are treated as equal).
+If \code{case.sensitive = FALSE}, matching ignores differences in letter casing (i.e, \code{"PANTHER"} and \code{"Panther"} are treated as equal).
 }
 \examples{
 
