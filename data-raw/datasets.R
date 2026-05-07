@@ -32,8 +32,8 @@ invest.dict <- list(
   "UBS" = c("ubs", "ubs group ag")
 )
 
-#Investment dataset.
-invest.df <- read.csv('~/Desktop/Academics/Y3S2/STAT 275W/strmatch/data/invest.dataset.csv')
+#Investment dataset (find in data folder)
+invest.df <- read.csv('~/data/invest.dataset.csv')
 
 #####Random Letters Dataset:#########
 
