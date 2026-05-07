@@ -11,7 +11,7 @@
 #'
 #'@param dict a named list where each element is a character vector of synonyms assigned to a key (i.e \code{Chase = c("chase", "jp morgan")})
 #'
-#'@param str.sep a character string used to split multi-"word" values within a cell (i.e \code{str.sep = ";"} or \code{"."}). Default is NULL meaning each cell is treated as a single value.
+#'@param str.sep a character string used to split multi-"word" values within a cell (i.e \code{str.sep = ";"} or \code{"."}). Default is \code{NULL} meaning each cell is treated as a single value.
 #'
 #'@details The function sets all string values to lowercase before matching. As such dictionary synonyms should also be set in lowercase. Matching is conducted after leading and trailing white spaces are trimmed.
 #'

@@ -5,7 +5,7 @@
 #'
 #'@param x a vector containing character or character-coercible values.
 #'
-#'@param case.sensitive a logical value. If \code{TRUE}, unique values consider for letter casing (i.e "TREE" and "tree" will be treated as different values). If \code{FALSE}, all string values are set to lowercase (i.e, "PANTHER" is set to "panther"). Default is TRUE.
+#'@param case.sensitive a logical value. If \code{TRUE}, unique values consider for letter casing (i.e \code{"TREE"} and \code{"tree"} will be treated as different values). If \code{FALSE}, all string values are set to lowercase (i.e, \code{"PANTHER"} is set to \code{"panther"}). Default is \code{TRUE}.
 #'
 #'@param top_n a numeric value indicating how many of the most frequent values the bar plot shows. Default is 10.
 #'
@@ -22,9 +22,9 @@
 #'  \item \code{Count}: Number of occurrences of each unique value.
 #'  \item \code{Percentage}: Proportion of each value in the dataset.
 #'}
-#'If \code{plot} is set to TRUE, a bar plot will be created using the sorted matrix data.
+#'If \code{plot} is set to \code{TRUE}, a bar plot will be created using the sorted matrix data.
 #'
-#'If \code{use_percentage} is TRUE, the bar plot will use Percentage data rather than the default Count data.
+#'If \code{use_percentage} is \code{TRUE}, the bar plot will use Percentage data rather than the default \code{Count} data.
 #'
 #'
 #'@export
