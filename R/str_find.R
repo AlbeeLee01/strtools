@@ -41,8 +41,8 @@ str_find <- function(df, x, k.word, case.sensitive = TRUE) {
 
   str_vec <- as.character(df[,x])
 
-  #If word is not case sensitive then set every string value to lowercase.
-  if(!case.sensitive) {
+  #If case.sensitive is false then set every string value to lowercase.
+  if(case.sensitive == FALSE) {
     str_vec <- tolower(str_vec)
     k.word <- tolower(k.word)
   }

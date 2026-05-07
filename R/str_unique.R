@@ -47,7 +47,7 @@ str_unique <- function(x, case.sensitive = TRUE, top_n = 10, plot = TRUE, use_pe
   n.row <- length(str_vec)
 
   #Optional case-handling
-  if (!case.sensitive) {
+  if (case.sensitive == FALSE) {
     str_vec <- tolower(str_vec)
   }
 
