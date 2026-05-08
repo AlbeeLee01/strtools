@@ -33,7 +33,7 @@ invest.dict <- list(
 )
 
 #Investment dataset (find in data folder)
-invest.df <- read.csv('~/data/invest.dataset.csv')
+invest.df <- read.csv('~/inst/invest.dataset.csv')
 
 #####Random Letters Dataset:#########
 
