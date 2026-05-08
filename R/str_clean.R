@@ -76,6 +76,7 @@ str_clean <- function(df, x, dict, str.sep = NULL) {
     #Go to next item if row is empty:
     if(length(items) == 0) {
       result_list[[i]] <- NA_character_
+      next
     }
 
     result <- c()
