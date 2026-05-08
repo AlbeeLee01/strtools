@@ -49,13 +49,14 @@ str_clean <- function(df, x, dict, str.sep = NULL) {
 
   #Vectorize string column
   str_vec <- tolower(as.character(df[, col.ind]))
+  str_vec[str_vec == "na"] <- NA  #Convert na strings into NA
   n.vec <- length(str_vec)
 
   #Split strings if needed based on str.sep value.
   if (!is.null(str.sep)) {
     str_list <- strsplit(str_vec, str.sep) #Each row becomes a vector of split strings.
   } else {
-    str_list <- str_vec
+    str_list <- as.list(str_vec)
   }
 
   #Dictionary variables
@@ -70,8 +71,14 @@ str_clean <- function(df, x, dict, str.sep = NULL) {
   for (i in seq_along(str_list)) {
 
     items <- trimws(str_list[[i]], which = "both") #Trim leading white spaces
-    result <- c()
+    items <- items[!is.na(items) & nzchar(items)] #Skip NA and empty strings.
 
+    #Go to next item if row is empty:
+    if(length(items) == 0) {
+      result_list[[i]] <- NA_character_
+    }
+
+    result <- c()
     #For each entry in items
     for (entry in items) {
 
