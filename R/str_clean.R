@@ -48,16 +48,16 @@ str_clean <- function(df, x, dict, str.sep = NULL) {
   }
 
   #Vectorize string column
-  str_vec <- tolower(as.character(df[, col.ind]))
-  str_vec[str_vec == "na"] <- NA  #Convert na strings into NA
-  n.vec <- length(str_vec)
+  str_vec <- tolower(as.character(df[[x]]))
 
   #Split strings if needed based on str.sep value.
   if (!is.null(str.sep)) {
     str_list <- strsplit(str_vec, str.sep) #Each row becomes a vector of split strings.
   } else {
-    str_list <- as.list(str_vec)
+    str_list <- str_vec
   }
+
+  n.vec <- length(str_list)
 
   #Dictionary variables
   keys <- names(dict)
@@ -71,15 +71,8 @@ str_clean <- function(df, x, dict, str.sep = NULL) {
   for (i in seq_along(str_list)) {
 
     items <- trimws(str_list[[i]], which = "both") #Trim leading white spaces
-    items <- items[!is.na(items) & nzchar(items)] #Skip NA and empty strings.
-
-    #Go to next item if row is empty:
-    if(length(items) == 0) {
-      result_list[[i]] <- NA_character_
-      next
-    }
-
     result <- c()
+
     #For each entry in items
     for (entry in items) {
 
@@ -109,9 +102,8 @@ str_clean <- function(df, x, dict, str.sep = NULL) {
     result_list[[i]] <- result
   }
 
-  #Mutate data frame to include cleaned data next to raw data.
-  df <- append(df, list(cleaned = I(result_list)), after = col.ind)
-  df <- as.data.frame(df)
+  df[["cleaned"]] <- I(result_list)
+  df2 <- as.data.frame(df)
 
   no_match.df <- data.frame(string = names(no_match.ind), rows = I(no_match.ind), row.names = NULL)
   assign("no_match.df", no_match.df, envir = .GlobalEnv)
@@ -126,8 +118,9 @@ str_clean <- function(df, x, dict, str.sep = NULL) {
   #By setting no_match.ind into the global environment it allows the user to utilize the information directly for continued cleaning purposes.
   assign("no_match.df", no_match.df, envir = .GlobalEnv)
 
-  return(head(df))
+  return(df2)
 }
+
 
 
 
