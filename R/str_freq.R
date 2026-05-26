@@ -54,6 +54,10 @@ str_freq <- function(x, case.sensitive = TRUE, top_n = 10, plot = TRUE, use_perc
 
   }
 
+  #Remove NA's
+  na_vals <- c("", "na", "n/a", "null", "NA", "N/A", "NULL")
+  str_vec <- str_vec[!is.na(str_vec) & str_vec %in% na_vals]
+
   n.row <- length(str_vec)
 
   #Optional case-handling
