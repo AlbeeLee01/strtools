@@ -40,10 +40,20 @@
 #'#Example with character-coerced numeric columns
 #'str_unique(mtcars$cyl)
 
-str_unique <- function(x, case.sensitive = TRUE, top_n = 10, plot = TRUE, use_percentage = FALSE, ...) {
+str_unique <- function(x, case.sensitive = TRUE, top_n = 10, plot = TRUE, use_percentage = FALSE, str.sep = NULL, ...) {
 
   #Setup information for function
   str_vec <- as.character(x)
+
+  #Separates flat string values based on some separator.
+  if (!is.null(str.sep)) {
+
+    str_vec <- strsplit(str_vec, str.sep)
+    str_vec <- unlist(str_vec)
+    str_vec <- trimws(str_vec)
+
+  }
+
   n.row <- length(str_vec)
 
   #Optional case-handling
