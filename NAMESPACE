@@ -2,4 +2,4 @@
 
 export(str_clean)
 export(str_find)
-export(str_unique)
+export(str_freq)

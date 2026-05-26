@@ -99,10 +99,10 @@ str_clean <- function(df, x, dict, str.sep = NULL) {
 
       }
     }
-    result_list[[i]] <- result
+    result_list[[i]] <- paste(unique(result), collapse = ", ")
   }
 
-  df[["cleaned"]] <- I(result_list)
+  df[["cleaned"]] <- result_list
   df2 <- as.data.frame(df)
 
   no_match.df <- data.frame(string = names(no_match.ind), rows = I(no_match.ind), row.names = NULL)

@@ -1,6 +1,6 @@
 #'Summarize unique string values
 #'
-#'\code{str_unique()} identifies all unique string values in a selected vector and returns a sorted summary of the count and proportion of each unique string.
+#'\code{str_freq()} identifies all unique string values in a selected vector and returns a sorted summary of the count and proportion of each unique string.
 #'A bar plot can also be produced showing the top n frequent values based on count or percentage.
 #'
 #'@param x a vector containing character or character-coercible values.
@@ -40,7 +40,7 @@
 #'#Example with character-coerced numeric columns
 #'str_unique(mtcars$cyl)
 
-str_unique <- function(x, case.sensitive = TRUE, top_n = 10, plot = TRUE, use_percentage = FALSE, str.sep = NULL, ...) {
+str_freq <- function(x, case.sensitive = TRUE, top_n = 10, plot = TRUE, use_percentage = FALSE, str.sep = NULL, ...) {
 
   #Setup information for function
   str_vec <- as.character(x)
