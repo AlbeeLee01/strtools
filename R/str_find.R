@@ -11,6 +11,7 @@
 #'
 #'@param case.sensitive a logical evaluating to \code{TRUE} or \code{FALSE} indicating whether the function evaluates for uppercase or lowercase strings.
 #'
+#'@param str.sep a character string used to split multi-"word" values within a string value (i.e \code{str.sep = ";"} or \code{"."}). Default is \code{NULL} meaning each cell is treated as a single value.
 #'@details If \code{case.sensitive = TRUE}, matching requires exact agreement in letter casing (i.e \code{"PANTHER"} and \code{"Panther"} will be treated as different values).
 #'
 #'If \code{case.sensitive = FALSE}, matching ignores differences in letter casing (i.e, \code{"PANTHER"} and \code{"Panther"} are treated as equal).
@@ -37,7 +38,7 @@
 #'@export
 
 
-str_find <- function(df, x, k.word, case.sensitive = TRUE) {
+str_find <- function(df, x, k.word, case.sensitive = TRUE, str.sep = NULL) {
 
   str_vec <- as.character(df[,x])
 
@@ -47,8 +48,31 @@ str_find <- function(df, x, k.word, case.sensitive = TRUE) {
     k.word <- tolower(k.word)
   }
 
-  #Vector that contains the index of the key word
-  str_ind <- which(str_vec %in% k.word)
+  #If separator exists, split strings into vectors.
+  if(!is.null(str.sep)) {
+
+    str_list <- strsplit(str_vec, str.sep)
+
+    #Trim whitespace from split strings.
+    str_list <- lapply(str_list, trimws)
+
+    #Vector that contains the index of the key word
+    str_ind <- c()
+
+    for(i in seq_along(str_list)) {
+
+      if(any(str_list[[i]] %in% k.word)) {
+        str_ind <- c(str_ind, i)
+      }
+
+    }
+
+  } else {
+
+    #Original exact-match behavior
+    str_ind <- which(str_vec %in% k.word)
+
+  }
 
   #Data frame of rows that contains the keyword
   str_found <- df[str_ind,]

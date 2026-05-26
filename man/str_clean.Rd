@@ -13,7 +13,7 @@ str_clean(df, x, dict, str.sep = NULL)
 
 \item{dict}{a named list where each element is a character vector of synonyms assigned to a key (i.e \code{Chase = c("chase", "jp morgan")})}
 
-\item{str.sep}{a character string used to split multi-"word" values within a cell (i.e \code{str.sep = ";"} or \code{"."}). Default is \code{NULL} meaning each cell is treated as a single value.}
+\item{str.sep}{a character string used to split multi-"word" values within a string value (i.e \code{str.sep = ";"} or \code{"."}). Default is \code{NULL} meaning each cell is treated as a single value.}
 }
 \value{
 Returns \code{df} with a new column inserted directly after the source column \code{x}. A complimentary data frame \code{no_match.df} stores any unmatched values and their corresponding rows in the global environment containing:

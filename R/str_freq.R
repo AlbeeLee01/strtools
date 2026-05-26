@@ -13,6 +13,8 @@
 #'
 #'@param use_percentage a logical value. If \code{FALSE}, the y-axis and y-labels will use the \code{Count} data. If \code{TRUE}, the y-axis and y-labels will use the \code{Percentage} data.
 #'
+#'@param str.sep a character string used to split multi-"word" values within a string value (i.e \code{str.sep = ";"} or \code{"."}). Default is \code{NULL} meaning each cell is treated as a single value.
+#'
 #'@param ... further arguments passed to customize bar plot visualization.
 #'
 #'@details The effectiveness of this function is reliant on how noisy the string data is.

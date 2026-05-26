@@ -4,7 +4,7 @@
 \alias{str_find}
 \title{Finding rows containing specified keywords}
 \usage{
-str_find(df, x, k.word, case.sensitive = TRUE)
+str_find(df, x, k.word, case.sensitive = TRUE, str.sep = NULL)
 }
 \arguments{
 \item{df}{a data frame containing the variable to be analyzed.}
@@ -14,6 +14,8 @@ str_find(df, x, k.word, case.sensitive = TRUE)
 \item{k.word}{a string vector that contains keyword(s) to be detected from the data frame.}
 
 \item{case.sensitive}{a logical evaluating to \code{TRUE} or \code{FALSE} indicating whether the function evaluates for uppercase or lowercase strings.}
+
+\item{str.sep}{a character string used to split multi-"word" values within a string value (i.e \code{str.sep = ";"} or \code{"."}). Default is \code{NULL} meaning each cell is treated as a single value.}
 }
 \value{
 A data frame containing only the rows where the selected column matches at least one of the specified keywords.

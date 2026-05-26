@@ -25,6 +25,8 @@ str_freq(
 
 \item{use_percentage}{a logical value. If \code{FALSE}, the y-axis and y-labels will use the \code{Count} data. If \code{TRUE}, the y-axis and y-labels will use the \code{Percentage} data.}
 
+\item{str.sep}{a character string used to split multi-"word" values within a string value (i.e \code{str.sep = ";"} or \code{"."}). Default is \code{NULL} meaning each cell is treated as a single value.}
+
 \item{...}{further arguments passed to customize bar plot visualization.}
 }
 \value{
